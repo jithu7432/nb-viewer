@@ -1,7 +1,7 @@
 ## Jupyter Notebook Viewer (Ubuntu)
 * This is a utility which lets you preview jupyter notebooks faster on your web browser without starting a Jupyter server.
 * Requires no internet and is faster.
-* Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `path.py` by using the commmand `which jupyter`,     `/home/jithin/venv/bin/jupyter`in my case.
+* Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `path.py` by using the commmand `which jupyter`,     `/home/jithin/venv/bin/jupyter` in my case.
 
 * Crashes when spaces are present in the filename, eg: `"hello world.ipynb"`  
 
