@@ -5,6 +5,6 @@
 * Add an alias after cloning this repository to `.bash_aliases` for running the script easily from the terminal.
 * `alias nbv='python3 ~/codes/nb-viewer/nbv.py'`
 * After adding as alias say `nbv`, then run as `nbv test.ipynb`
-* Breaks down when the notebook has spaces in name eg: `hello world.ipynb`
+* Breaks down when the spaces are present in the name eg: `"hello world.ipynb"`
 
 * Edit: `nbv` in a shell now opens all `.ipynb` in the browser, pervious code also availabe as `nbvsingle.py`.
