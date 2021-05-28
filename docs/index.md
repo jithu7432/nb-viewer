@@ -1,4 +1,3 @@
-
 ## Jupyter Notebook Viewer (Ubuntu)
 * This is a utility which lets you preview jupyter notebooks faster on your web browser without starting a Jupyter server.
 * Requires no internet and is faster.
