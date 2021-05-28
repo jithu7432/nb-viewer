@@ -1,37 +1,116 @@
-## Welcome to GitHub Pages
+Skip to content
+Search or jump to…
 
-You can use the [editor on GitHub](https://github.com/jithu7432/nb-viewer/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@jithu7432 
+jithu7432
+/
+nb-viewer
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+nb-viewer
+/
+README.md
+in
+main
+ 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Spaces
 
-### Markdown
+1
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+Soft wrap
+1
+​
+2
+## Jupyter Notebook Viewer (Ubuntu)
+3
+* This is a utility which lets you preview jupyter notebooks faster on your web browser without starting a Jupyter server.
+4
+* Requires no internet and is faster.
+5
+* Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `path.py` by using the commmand `which jupyter`,     `/home/jithin/venv/bin/jupyter`in my case.
+6
+​
+7
+* Crashes when spaces are present in the filename, eg: `"hello world.ipynb"`  
+8
+​
+9
+# Installation
+10
+* Clone the repository
+11
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+12
+​
+13
+git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer 
+14
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jithu7432/nb-viewer/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+15
+* Create a directory for `nbv`  and copy all the contents to it
+16
+```markdown
+17
+sudo mkdir /opt/nbv ; sudo cp -a . /opt/nbv
+18
+```
+19
+* Add an alias for using the utility
+20
+```markdown
+21
+echo "alias nbv='/opt/nbv/nbv.py'">> ~/.bash_aliases
+22
+```
+23
+* Make sure you have updated the path to Jupyter on the file 
+24
+ ```markdown
+25
+sudo nano /opt/nbv/path.py
+26
+```
+27
+## Usage
+28
+* Navigate to any directory containing Jupyter notebooks, open terminal and run `nbv` to open all notebooks in your default web browser.
+29
+​
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+@jithu7432
+Commit changes
+Commit summary
+Create README.md
+Optional extended description
+Add an optional extended description…
+ Commit directly to the main branch.
+ Create a new branch for this commit and start a pull request. Learn more about pull requests.
+ 
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
