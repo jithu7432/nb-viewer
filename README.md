@@ -4,7 +4,7 @@
 * Requires no internet and is faster.
 * Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `path.py` by using the commmand `which jupyter`,     `/home/jithin/venv/bin/jupyter`in my case.
 
-* Crashes when spaces are present in the name, eg: `"hello world.ipynb"`  
+* Crashes when spaces are present in the filename, eg: `"hello world.ipynb"`  
 
 # Installation
 * Clone the repository
