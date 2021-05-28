@@ -3,11 +3,11 @@ import subprocess
 import webbrowser
 import sys
 import os
-import path
+import jpath
 
-notebook = sys.argv[1] + '.ipynb'
+notebook = sys.argv[1] 
 
-convert = path_to_jupyter + ' nbconvert --to html '+ notebook
+convert = jpath.path_to_jupyter + ' nbconvert --to html '+ notebook
 
 subprocess.call(convert.split())
 
