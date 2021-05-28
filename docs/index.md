@@ -7,8 +7,7 @@
 
 # Installation
 * Clone the repository
-```markdown
-
+```
 git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer 
 ```
 * Create a directory for `nbv`  and copy all the contents to it
