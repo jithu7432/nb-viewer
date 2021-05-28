@@ -12,18 +12,17 @@
 
 git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer 
 ```
-* Create a directory for `nbv` 
+* Create a directory for `nbv`  and copy all the contents to it
 ```markdown
-sudo mkdir /opt/nbv
-```
-* Copy all the contents to `nbv`
-```markdown
-sudo cp -a /opt/nbv
+sudo mkdir /opt/nbv ; sudo cp -a . /opt/nbv
 ```
 * Add an alias for using the utility
 ```markdown
 echo "alias nbv='/opt/nbv/nbv.py'">> ~/.bash_aliases
 ```
-* Make sure you have updated the path to Jupyter on the file `/opt/nbv/path.py`
+* Make sure you have updated the path to Jupyter on the file 
+ ```markdown
+sudo nano /opt/nbv/path.py
+```
 ## Usage
 * Navigate to any directory containing Jupyter notebooks, open terminal and run `nbv` to open all notebooks in your default web browser.
