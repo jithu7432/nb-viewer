@@ -4,15 +4,19 @@ import webbrowser
 import sys
 import os
 import jpath
+import glob
 
-notebook = sys.argv[1] 
+x = glob.glob('*.ipynb')
 
-convert = jpath.path_to_jupyter + ' nbconvert --to html '+ notebook
+print(*x)
 
-subprocess.call(convert.split())
+for notebook in x:
+	convert = jpath.path_to_jupyter + ' nbconvert --to html '+ notebook
 
-html = notebook[:-5] + 'html'
+	subprocess.call(convert.split())
 
-file = webbrowser.open(html, 2)
+	html = notebook[:-5] + 'html'
 
-os.remove(html)
+	file = webbrowser.open(html, 2)
+
+	os.remove(html)
