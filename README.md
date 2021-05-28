@@ -9,11 +9,12 @@
 # Installation
 * Clone the repository
 ```markdown
-`git clone https://github.com/jithu7432/nb-viewer.git; cd nb-viewer`
+
+`git clone https://github.com/jithu7432/nb-viewer.git`
 ```
 * Create a directory for `nbv` 
 ```markdown
-`sudo mkdir /opt/nbv`
+`sudo mkdir /opt/nbv; cd nb-viewer`
 ```
 * Copy all the contents to `nbv`
 ```markdown
