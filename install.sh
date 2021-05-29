@@ -4,7 +4,7 @@ depath='/opt/nbv/'
 echo "Installing dependencies.."
 pip3 install -r requirements.txt
 echo "Making Directory /opt/nbv/ .."
-mkdir $depath
+sudo mkdir $depath
 echo "Copying files to /opt/nbv/ .."
 sudo cp -r ./ico $depath
 sudo cp ./LICENSE $depath
