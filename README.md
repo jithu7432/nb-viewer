@@ -1,5 +1,5 @@
 ## Jupyter Notebook Viewer (Ubuntu)
-* This is a utility which lets you preview jupyter notebooks faster on your Ubuntu machine with a double click.
+* This is a utility which lets you preview jupyter notebooks faster on your Ubuntu machine, with a double click.
 * Requires no internet and is faster.
 * If you have installed Jupyter in a virtual environment, update the path of Jupyter on `/opt/nbv/path.py`  after the installation.
 
