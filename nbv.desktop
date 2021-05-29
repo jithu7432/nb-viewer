@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/opt/nbv/nbvs.py %F
+Icon=/opt/nbv/ico/nbv.ico
+Name=Notebook Viewer
+Terminal=false
+Type=Application

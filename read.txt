@@ -1,0 +1,3 @@
+vim ~/.config/mimeapps.list
+update-mime-database ~/.local/share/mime
+cd ~/.local/share/mime/packages
