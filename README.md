@@ -1,10 +1,9 @@
-
 ## Jupyter Notebook Viewer (Ubuntu)
-* This is a utility which lets you preview jupyter notebooks faster on your web browser without starting a Jupyter server.
+* This is a utility which lets you preview jupyter notebooks faster on your Ubuntu machine with a double click.
 * Requires no internet and is faster.
-* Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `path.py` by using the commmand `which jupyter`,     `/home/jithin/venv/bin/jupyter`in my case.
+* Whether you have installed Jupyter in a virtual environment or not, update the path of Jupyter on `/opt/nbv/path.py`  after the installation.
 
-* Crashes when spaces are present in the filename, eg: `"hello world.ipynb"`  
+* Shows gibberish when the filename contains spaces, eg: `"hello world.ipynb"`, rename the file properly to ensure compatibility eg: `helloworld.ipynb`.  
 
 # Installation
 * Clone the repository
@@ -12,17 +11,19 @@
 
 git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer 
 ```
-* Create a directory for `nbv`  and copy all the contents to it
+* Make the `install.sh` executable using the command 
 ```markdown
-sudo mkdir /opt/nbv ; sudo cp -a . /opt/nbv
+sudo chmod +x install.sh
 ```
-* Add an alias for using the utility
+* Run the installer
 ```markdown
-echo "alias nbv='/opt/nbv/nbv.py'">> ~/.bash_aliases
+./install.sh, enter password when prompted
 ```
-* Make sure you have updated the path to Jupyter on the file 
+* Make sure you have updated the path to Jupyter on the file, path to jupyter can be found using `which jupyter`
  ```markdown
 sudo nano /opt/nbv/path.py
 ```
 ## Usage
-* Navigate to any directory containing Jupyter notebooks, open terminal and run `nbv` to open all notebooks in your default web browser.
+* When using for the first time, right click a `.ipynb` file, 
+ `properties` >> `open with`>>`Notebook Viewer`
+* From the next time, view Jupyter notebooks with a double click!
