@@ -27,6 +27,8 @@ sudo chmod +x install.sh
 sudo nano /opt/nbv/path.py
 ```
 ## Usage
-* When using for the first time, right click a `.ipynb` file, 
+* When using for the first time, right click a `.ipynb` file,
+ 
  `properties` >> `open with`>>`Notebook Viewer`
+
 * From the next time, view Jupyter notebooks with a double click!
