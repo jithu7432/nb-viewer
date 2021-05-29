@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import subprocess
-import webbrowser
 import sys
 import os
 import path
