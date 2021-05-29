@@ -15,9 +15,9 @@ git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer
 ```markdown
 sudo chmod +x install.sh
 ```
-* Run the installer
+* Run the installer, enter password when prompted
 ```markdown
-./install.sh, enter password when prompted
+./install.sh
 ```
 * Make sure you have updated the path to Jupyter on the file, path to jupyter can be found using `which jupyter`
  ```markdown
