@@ -7,13 +7,17 @@
 
 # Installation
 * Clone the repository
+
 ```markdown
 git clone https://github.com/jithu7432/nb-viewer.git ; cd nb-viewer 
 ```
+
 * Make the `install.sh` executable using the command 
+
 ```markdown
 sudo chmod +x install.sh
 ```
+
 * Run the installer, enter password when prompted
 ```markdown
 ./install.sh
