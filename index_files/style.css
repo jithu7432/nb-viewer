@@ -407,7 +407,7 @@ p img {
 pre,code {
 	color: #3a6275;
 	background-color: #fff;
-	font-family: 'Mono';
+	font-family: 'Mono',monospace;
 	font-size: 14px;
 	font-weight:bold;
 	border-radius: 2px;
