@@ -6,7 +6,10 @@ import os
 import path
 import webview
 
-
+if len(sys.argv) == 1:
+	window = webview.create_window(title = 'Jupyter Notebook Viewer', html = "Please right click a '.ipynb' and open with Jupyter Notebook Viewer")
+	webview.start()
+	exit()
 
 notebook = sys.argv[1]
 
