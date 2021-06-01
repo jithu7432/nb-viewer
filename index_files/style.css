@@ -541,7 +541,7 @@ form {
 #project_title {
 	margin: 0;
 	color: #1bbccc;
-	font-size: 42px;
+	font-size: 40px;
 	font-weight: 700;
 	text-shadow: #111 0px 0px 10px;
 }
@@ -594,7 +594,7 @@ form {
 }
 
 #main_content_wrap {
-	background: #f2f2f2;
+	background: #cadec5;
 	border-top: 1px solid #111;
 	border-bottom: 1px solid #111;
 }
