@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-
+#!usr/bin/python3
 import nbformat
 import os
 import subprocess
@@ -10,16 +9,23 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
 
-cwd = os.getcwd()
 
+
+class Window(QWebEngineView):
+    
+    def __init__(self):
+        super(Window,self).__init__()
+        self.setWindowTitle('JUPYTER NOTEBOOK VIEWER')
+
+
+cwd = os.getcwd()
 app = QApplication(sys.argv)
-window = QWebEngineView()
 
 
 if len(sys.argv) == 1:
-    window.setWindowTitle('JUPYTER NOTEBOOK VIEWER')
-    window.setHtml('<t>Please right click a jupyter notebook, and open with <h4>Notebook Viewer</h4></t>')
-    window.show()
+    wind = Window()
+    wind.setHtml('Please right click, open with Jupter Notebook Viewer')
+    wind.show()
     sys.exit(app.exec_())
     exit()
 
@@ -42,9 +48,11 @@ with open(htmlname, 'w') as file:
     file.close()
 
 
-window.setWindowTitle("JUPYTER NOTEBOOK VIEWER - " + notebook_)
-window.setUrl(QUrl.fromLocalFile(os.path.join(cwd,htmlname)))
-window.show()
-app.exec_()
+wind = Window()
+wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd,htmlname)))
+wind.show()
+sys.exit(app.exec_())
+
 
 os.remove(os.path.join(cwd,htmlname))
+exit()
