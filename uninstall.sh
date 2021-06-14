@@ -2,4 +2,4 @@
 home=$HOME
 sudo rm -rf /opt/nbv
 sudo rm $home/.local/share/applications/nbv.desktop
-echo "done"
+echo "Uninstall Complete"
