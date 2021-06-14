@@ -1,8 +1,6 @@
 ## Jupyter Notebook Viewer
 * This is a utility which lets you preview jupyter notebooks faster on your Linux machine, with a double click.
 * Requires no internet and is faster.
-* If you have installed Jupyter in a virtual environment, update the path of Jupyter on `/opt/nbv/path.py`  after the installation.
-
 * Shows gibberish when the filename contains spaces, eg: `"hello world.ipynb"`, rename the file properly to ensure compatibility eg: `helloworld.ipynb`.  
 
 # Installation
@@ -22,10 +20,7 @@ sudo chmod +x install.sh
 ```markdown
 ./install.sh
 ```
-* Make sure you have updated the path to Jupyter on the file, path to jupyter can be found using `which jupyter`
- ```markdown
-sudo nano /opt/nbv/path.py
-```
+
 ## Usage
 * When using for the first time, right click a `.ipynb` file,
  
