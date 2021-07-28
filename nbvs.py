@@ -13,16 +13,16 @@ if len(sys.argv) == 1:
 
 notebook = sys.argv[1]
 
-htmlname = '.' + notebook.split('/')[-1][:-5] + 'html'
-htmlpath = "/".join(notebook.split('/')[:-1]) + '/'
-htmlfile = htmlpath + htmlname
-notebook_ = notebook.split('/')[-1]
+htmlname = os.path.splitext(os.path.split(notebook)[1])[0] + '.html'
+htmlpath = os.path.split(notebook)[0]
+htmlfile = os.path.join(htmlpath, htmlname)
+notebook_ = os.path.split(notebook)[1]
 
 temp = open(htmlfile, 'w')
 
-convert = path.path_to_jupyter + ' nbconvert --to html ' + notebook + ' --stdout'
+convert = path.path_to_jupyter + ' nbconvert --to html "' + notebook + '" --stdout'
 
-out = subprocess.call(convert.split(), stdout = temp)
+out = subprocess.call(convert, stdout = temp, shell=True)
 
 temp.close()
 
