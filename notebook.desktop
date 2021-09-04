@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/opt/nbv/nbvs.py %F
+Exec=/opt/nbv/notebook %F
 Icon=/opt/nbv/ico/nbv.ico
 Name=Notebook Viewer
 Terminal=false

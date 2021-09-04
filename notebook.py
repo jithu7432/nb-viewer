@@ -1,10 +1,10 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 import nbformat
 import os
-import subprocess
 import sys
 
 from nbconvert import HTMLExporter
+
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
@@ -24,17 +24,16 @@ app = QApplication(sys.argv)
 
 if len(sys.argv) == 1:
     wind = Window()
-    wind.setHtml('Please right click, open with Jupter Notebook Viewer')
+    wind.setHtml('Please right click the .ipynb file and open with JUPYTER NOTEBOOK VIEWER')
     wind.show()
     sys.exit(app.exec_())
-    exit()
 
-notebook = sys.argv[1]
 
-htmlname = '.' + notebook.split('/')[-1][:-5] + 'html'
-htmlpath = "/".join(notebook.split('/')[:-1]) + '/'
-htmlfile = htmlpath + htmlname
-notebook_ = notebook.split('/')[-1]
+notebook  = sys.argv[1]
+htmlname  = os.path.splitext(os.path.split(notebook)[1])[0] + '.html'
+htmlpath  = os.path.split(notebook)[0]
+htmlfile  = os.path.join(htmlpath, htmlname)
+notebook_ = os.path.split(notebook)[1]
 
 html_exporter = HTMLExporter()
 html_exporter.template_name = 'classic'
@@ -42,17 +41,16 @@ html_exporter.template_name = 'classic'
 
 notebook = nbformat.read(os.path.join(cwd,notebook), as_version=4)
 body, resources = html_exporter.from_notebook_node(notebook)
-
-with open(htmlname, 'w') as file:
+filename = "/tmp/" + htmlname 
+with open(filename, 'w') as file:
     file.write(body)
     file.close()
 
 
 wind = Window()
-wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd,htmlname)))
+wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd,filename)))
 wind.show()
+
+
+
 sys.exit(app.exec_())
-
-
-os.remove(os.path.join(cwd,htmlname))
-exit()
