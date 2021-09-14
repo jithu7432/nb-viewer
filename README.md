@@ -4,8 +4,8 @@
 
 
 # Installation
-* Download the latest release from this [link](https://github.com/jithu7432/nb-viewer/releases)
-* Open the terminal and run the below command for installation
+* Clone the latest version.
+* Open the terminal and run the below command for compiling and installing the application
  ```markdown
  sh install.sh
  ``` 
@@ -13,9 +13,5 @@
  ```markdown
  sh uninstall.sh
  ```
-
-# Building Instructions
-* You can build from the source code using 
- ```markdown
-  pyinstaller -F notebook.py 
-  ```
+ Thanks for contributing ❤️
+ * [Artem Shmatko](https://github.com/yozhikoff)
