@@ -1,3 +1,5 @@
 pyqtwebengine
 nbconvert
 nbformat
+cython
+

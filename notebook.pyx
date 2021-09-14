@@ -1,4 +1,5 @@
-##!/usr/bin/python3
+__author__ = "Jithin Johnson"
+
 import nbformat
 import os
 import sys
@@ -10,47 +11,41 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
 
 
-
 class Window(QWebEngineView):
     
     def __init__(self):
-        super(Window,self).__init__()
+        super(Window, self).__init__()
         self.setWindowTitle('JUPYTER NOTEBOOK VIEWER')
 
 
 cwd = os.getcwd()
 app = QApplication(sys.argv)
 
-
 if len(sys.argv) == 1:
     wind = Window()
-    wind.setHtml('Please right click the .ipynb file and open with JUPYTER NOTEBOOK VIEWER')
+    wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd, 'templates/index.html')))
     wind.show()
     sys.exit(app.exec_())
 
 
-notebook  = sys.argv[1]
-htmlname  = os.path.splitext(os.path.split(notebook)[1])[0] + '.html'
-htmlpath  = os.path.split(notebook)[0]
-htmlfile  = os.path.join(htmlpath, htmlname)
+notebook = sys.argv[1]
+htmlname = os.path.splitext(os.path.split(notebook)[1])[0] + '.html'
+htmlpath = os.path.split(notebook)[0]
+htmlfile = os.path.join(htmlpath, htmlname)
 notebook_ = os.path.split(notebook)[1]
 
 html_exporter = HTMLExporter()
-html_exporter.template_name = 'classic'
+html_exporter.template_name = 'lab'
 
 
-notebook = nbformat.read(os.path.join(cwd,notebook), as_version=4)
+notebook = nbformat.read(os.path.join(cwd, notebook), as_version=4)
 body, resources = html_exporter.from_notebook_node(notebook)
-filename = "/tmp/" + htmlname 
+filename = "/tmp/" + htmlname
 with open(filename, 'w') as file:
     file.write(body)
     file.close()
 
-
 wind = Window()
-wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd,filename)))
+wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd, filename)))
 wind.show()
-
-
-
 sys.exit(app.exec_())
