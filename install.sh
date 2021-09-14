@@ -33,8 +33,9 @@ sudo mv ./notebook $END
 sudo mv ./notebook.ico $END
 sudo mv ./LICENSE $END
 sudo mv ./README.md $END
-sudo mv ./templates $END
 sudo mv ./uninstall.sh $END
+sudo cp -r ./templates $END
+sudo rm ./templates
 
 echo "Installed succesfully"
 exit
