@@ -12,6 +12,8 @@
  ``` 
  After sucessfull installation, right click an .ipynb file and open with 'NOTEBOOK VIEWER'
  
+ ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/preview.gif)
+ 
 * And for uninstallation run 
  ```markdown
  sh uninstall.sh
