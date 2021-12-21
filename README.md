@@ -10,6 +10,8 @@
  ```markdown
  sh install.sh
  ``` 
+ After sucessfull installation, right click an .ipynb file and open with 'NOTEBOOK VIEWER'
+ 
 * And for uninstallation run 
  ```markdown
  sh uninstall.sh
