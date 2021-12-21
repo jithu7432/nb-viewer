@@ -11,7 +11,7 @@ PYTHON='python3.10'
 
 # installing necessary pip packages to the system python
 
-/usr/bin/pip install -r ./requirements.txt
+/usr/bin/pip3 install -r ./requirements.txt
 
 cython -3 --embed -o notebook.c notebook.pyx
 # gcc -Os -I /usr/include/$PYTHON notebook.c -l$PYTHON -o notebook
