@@ -14,6 +14,7 @@
  
  ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/preview.gif)
  
+ Use `Ctrl` key and the scroll wheel to adjust the scale.
 * And for uninstallation run 
  ```markdown
  sh uninstall.sh
