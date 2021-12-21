@@ -16,6 +16,8 @@ class Window(QWebEngineView):
     def __init__(self):
         super(Window, self).__init__()
         self.setWindowTitle('JUPYTER NOTEBOOK VIEWER')
+        self.resize(800,600)
+        self.showMaximized()
 
 
 cwd = os.getcwd()
@@ -23,7 +25,7 @@ app = QApplication(sys.argv)
 
 if len(sys.argv) == 1:
     wind = Window()
-    wind.setUrl(QUrl.fromLocalFile(os.path.join(cwd, 'templates/index.html')))
+    wind.setUrl(QUrl.fromLocalFile('/opt/nbv/templates/index.html'))
     wind.show()
     sys.exit(app.exec_())
 
