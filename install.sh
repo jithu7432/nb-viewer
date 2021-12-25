@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 END="/opt/nbv/"
 
 echo "Begining Installation"
@@ -16,7 +18,7 @@ PYTHON='python3.10'
 cython -3 --embed -o notebook.c notebook.pyx
 # gcc -Os -I /usr/include/$PYTHON notebook.c -l$PYTHON -o notebook
 # gcc -Os `python-config --includes` notebook.c `python-config --abiflags` -o notebook
-gcc -Os `python-config --includes` notebook.c -l$PYTHON -o notebook
+gcc -Os `python3-config --includes` notebook.c -l$PYTHON -o notebook
 
 echo "Compilation successful"
 rm notebook.c 
@@ -36,7 +38,6 @@ sudo cp ./notebook.ico $END
 sudo cp ./LICENSE $END
 sudo cp ./README.md $END
 sudo cp ./uninstall.sh $END
-sudo cp -r ./templates $END
 
 echo "Installed succesfully"
 exit
