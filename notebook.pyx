@@ -9,6 +9,7 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 
+os.environ['QTWEBENGINE_DISABLE_SANDBOX'] = '1' # --no-sandbox
 
 class Window(QWebEngineView):
 
@@ -41,12 +42,7 @@ class App(QWidget):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getOpenFileName(self, "NOTEBOOK VIEWER", "", "IPython (*.ipynb)", options=options)
-        if fileName:
-            self.filename = fileName
-
-    def payload(self):
-        return self.filename
-
+        if fileName: self.filename = fileName
 
 def main(sys_argv_comp):
     notebook = sys_argv_comp
@@ -59,8 +55,7 @@ def main(sys_argv_comp):
 
     filename = "/tmp/" + htmlname
 
-    with open(filename, 'w') as file:
-        file.write(body)
+    with open(filename, 'w') as file: file.write(body)
 
     wind = Window()
     wind.setUrl(QUrl.fromLocalFile(filename))
