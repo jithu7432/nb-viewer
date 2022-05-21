@@ -9,7 +9,7 @@ Added a file picker to pick *.ipynb files
 * Open the `install.sh` and change the variable `$PYTHON` to the current version of Python you are using. (Mine is Python3.10)
 * Open the terminal and run the below command for compiling and installing the application
  ```markdown
- sh install.sh
+ ./install
  ``` 
  After sucessfull installation, open NOTEBOOK VIEWER and pick the file or right click an .ipynb file and open with 'NOTEBOOK VIEWER'
  
@@ -19,7 +19,7 @@ Added a file picker to pick *.ipynb files
  Use `Ctrl` key and the scroll wheel to adjust the scale.
 * And for uninstallation run 
  ```markdown
- sh uninstall.sh
+ ./uninstall
  ```
  Thanks for contributing ❤️
  * [Artem Shmatko](https://github.com/yozhikoff)
