@@ -13,8 +13,8 @@ Added a file picker to pick *.ipynb files
  ``` 
  After sucessfull installation, open NOTEBOOK VIEWER and pick the file or right click an .ipynb file and open with 'NOTEBOOK VIEWER'
  
- ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/preview.gif)
- ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/preview2.gif)
+ ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/docs/PREVIEW_1.gif)
+ ![Alt Text](https://github.com/jithu7432/nb-viewer/blob/master/docs/PREVIEW_2.gif)
  
  Use `Ctrl` key and the scroll wheel to adjust the scale.
 * And for uninstallation run 

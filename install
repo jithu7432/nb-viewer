@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+END="/opt/nbv/"
+PYTHON='python3.10'  
+cython -3 --verbose --embed -o build/notebook.c src/notebook.pyx
+gcc -Os `python3-config --includes` build/notebook.c -l$PYTHON -o build/notebook
+if [ ! -d $END ]; then 
+    sudo mkdir -p $END;
+fi
+
+if [ ! -d $HOME/.local/share/applications/ ]; then
+    sudo mkdir -p $HOME/.local/share/applications/;
+fi
+cp src/notebook.desktop $HOME/.local/share/applications/
+sudo cp docs/notebook.png /usr/share/icons/
+sudo cp build/notebook $END
+sudo cp uninstall $END
