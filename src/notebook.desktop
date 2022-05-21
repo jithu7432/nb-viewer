@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=/opt/nbv/notebook %F %U
-Icon=/opt/nbv/notebook.ico
+Icon=notebook.ico
 Name=Notebook Viewer
 Terminal=false
 Type=Application
