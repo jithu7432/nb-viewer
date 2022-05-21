@@ -6,7 +6,7 @@
 Added a file picker to pick *.ipynb files
 # Installation
 * Clone the latest version.
-* Open the `install.sh` and change the variable `$PYTHON` to the current version of Python you are using. (Mine is Python3.10)
+* Open the `install` and change the variable `$PYTHON` to the current version of Python you are using. (Mine is Python3.10)
 * Open the terminal and run the below command for compiling and installing the application
  ```markdown
  ./install
