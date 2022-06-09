@@ -2,6 +2,7 @@
 set -e
 END="/opt/nbv/"
 PYTHON='python3.10'  
+mkdir build
 cython -3 --verbose --embed -o build/notebook.c src/notebook.pyx
 gcc -Os `python3-config --includes` build/notebook.c -l$PYTHON -o build/notebook
 if [ ! -d $END ]; then 
