@@ -3,7 +3,7 @@
 * Requires no internet and is faster.
 
 ## Installation
-* Use `pip install .` to install the package, and you can call the command line utility from the terminal by
+* Use `pip install nbviewer-gui` to install the package, and you can call the command line utility from the terminal by
 
 ```fish
 nbviewer-gui notebook.ipynb
