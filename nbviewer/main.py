@@ -1,6 +1,6 @@
+#!/usr/bin/env python
 import os
 import sys
-import warnings
 import nbformat
 
 from nbconvert import HTMLExporter
@@ -11,7 +11,6 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
 
 os.environ["QTWEBENGINE_DISABLE_SANDBOX"] = "1"
-
 
 class Window(QWebEngineView):
     def __init__(self):
@@ -26,35 +25,31 @@ class App(QWidget):
     def __init__(self):
         super().__init__()
         self.title = "JUPYTER NOTEBOOK VIEWER"
-        self.top = 0
-        self.left = 0
-        self.width = 1280
-        self.height = 720
         self.filename = None
         self.initialze()
 
     def initialze(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.setGeometry(0, 0, 600, 100)
         self.open_filename_dialog()
 
     def open_filename_dialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        fileName, _ = QFileDialog.getOpenFileName(
+        filename, _ = QFileDialog.getOpenFileName(
             self, "NOTEBOOK VIEWER", "", "IPython (*.ipynb)", options=options
         )
-        if fileName:
-            self.filename = fileName
+        if filename:
+            self.filename = filename
 
 
-def execute(file_path):
+def execute(app, file_path):
     notebook = file_path
-    htmlname = os.path.splitext(os.path.split(notebook)[1])[0] + ".html"
+    htmlname = f"{os.path.splitext(os.path.split(notebook)[1])[0]}.html"
     html_exporter = HTMLExporter()
     html_exporter.template_name = "classic"
 
-    notebook = nbformat.read(os.path.join(cwd, notebook), as_version=4)
+    notebook = nbformat.read(os.path.join(os.getcwd(), notebook), as_version=4)
     body, _ = html_exporter.from_notebook_node(notebook)
 
     filename = f"/tmp/{htmlname}"
@@ -69,15 +64,18 @@ def execute(file_path):
     sys.exit(app.exec_())
 
 
-if __name__ == "__main__":
-    cwd = os.getcwd()
+def main():
     app = QApplication(sys.argv)
 
     if len(sys.argv) == 1:
         ex = App()
         if ex.filename:
-            execute(ex.filename)
+            execute(app, ex.filename)
         else:
             sys.exit()
     else:
-        execute(sys.argv[1])
+        execute(app, sys.argv[1])
+
+
+if __name__ == "__main__":
+    exit(main())
