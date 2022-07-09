@@ -8,4 +8,4 @@
 ```fish
 nbviewer-gui notebook.ipynb
 ```
-
+You can also use the `notebook.desktop` under the `nbviewergui` directory and create a desktop application, so that you can launch the script by double clicking the *.ipynb file.
