@@ -1,6 +1,7 @@
 [Desktop Entry]
-Exec=/opt/nbv/notebook %F %U
+Exec=/opt/nbv/notebook
 Icon=notebook
 Name=Notebook Viewer
 Terminal=false
 Type=Application
+X-Desktop-File-Install-Version=0.26
