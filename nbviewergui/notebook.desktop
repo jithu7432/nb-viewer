@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/opt/nbv/notebook
+Exec=nbviewer-gui
 Icon=notebook
 Name=Notebook Viewer
 Terminal=false
