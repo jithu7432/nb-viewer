@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nbviewer"
+dynamic = ["version"]
+description = "A Utility for previewing *.ipynb files in linux machines"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+authors = [{ name = "Jithin Johnson" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "ipython==8.4.0",
+    "nbconvert==6.5.0",
+    "nbformat==5.4.0",
+    "PyQtWebEngine==5.15.5",
+]
+
+[project.scripts]
+nbviewer = "nbviewer.main:main"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/jithu7432/nb-viewer/issues"
+Homepage = "https://github.com/jithu7432/nb-viewer"
