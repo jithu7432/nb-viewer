@@ -2,6 +2,7 @@
 import os
 import sys
 import nbformat
+import tempfile
 
 from nbconvert import HTMLExporter
 
@@ -21,7 +22,7 @@ class MainWindow(QWebEngineView):
         global HEIGHT
         global WIDTH
         super(MainWindow, self).__init__()
-        self.setWindowTitle("JUPYTER NOTEBOOK VIEWER")
+        self.setWindowTitle("nbviewer - Jupyter Notebook Viewer")
         self.resize(HEIGHT // 2, WIDTH // 2)
         self.showMaximized()
 
@@ -41,7 +42,7 @@ class FilePicker(QWidget):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         filename, _ = QFileDialog.getOpenFileName(
-            self, "NOTEBOOK VIEWER", "", "IPython (*.ipynb)", options=options
+            self, "nbviewer", "", "IPython (*.ipynb)", options=options
         )
         if filename:
             self.filename = filename
@@ -56,16 +57,15 @@ def execute(app, file_path):
     notebook = nbformat.read(os.path.join(os.getcwd(), notebook), as_version=4)
     body, _ = html_exporter.from_notebook_node(notebook)
 
-    filename = f"/tmp/{htmlname}"
-
-    with open(filename, "w") as file:
+    with tempfile.NamedTemporaryFile(suffix=".html", delete_on_close=False, mode='w', encoding='utf-8') as file:
         file.write(body)
+        file.close()
 
-    wind = MainWindow()
-    wind.setUrl(QUrl.fromLocalFile(filename))
-    wind.show()
+        wind = MainWindow()
+        wind.setUrl(QUrl.fromLocalFile(file.name))
+        wind.show()
 
-    sys.exit(app.exec_())
+        sys.exit(app.exec_())
 
 
 def main():
