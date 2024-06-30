@@ -33,3 +33,7 @@ nbviewer = "nbviewer.main:main"
 [project.urls]
 "Bug Tracker" = "https://github.com/jithu7432/nb-viewer/issues"
 Homepage = "https://github.com/jithu7432/nb-viewer"
+
+
+[tools.setuptools.packages.find]
+where = ["src"]
