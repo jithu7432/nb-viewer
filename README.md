@@ -12,6 +12,6 @@ yay -S nbviewer-gui
 ```fish
 nbviewer-gui notebook.ipynb
 ```
-You need to copy the `notebook.desktop` under the `nbviewergui` directory to `~/.local/share/icons/`, so that you can launch the script by double clicking the *.ipynb file.
+You need to copy the `notebook.desktop` under the `nbviewergui` directory to `~/.local/share/applications/`, so that you can launch the script by double clicking the *.ipynb file.
 ![](docs/PREVIEW_1.gif)
 ![](docs/PREVIEW_2.gif)
